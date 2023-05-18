@@ -1,0 +1,46 @@
+.custom-shadow {
+    box-shadow: 0 0 12px #000;
+}
+
+.title-text-shadow {
+    text-shadow: 0 0 6px #000;
+}
+
+.link-text-shadow {
+    text-shadow: 0 0 6px #000;
+}
+
+.arrow {
+    display: flex;
+    margin-left: 7px;
+    margin-top: -5px;
+    padding: 5px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    #hamburger-menu {
+        display: flex;
+    }
+
+    #header-menu-full {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ #header-menu-shrink li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+}
