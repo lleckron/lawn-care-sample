@@ -16,12 +16,14 @@ function LawnCareHeader() {
 
         return (
             <div id="services-menu" 
-                className='absolute w-[200px] top-3/4' 
-                onMouseOver={() => toggleShowServices(true)} 
-                onMouseLeave={() => toggleShowServices(false)}>
-                <ul className='text-center bg-white even:bg-light-gray rounded-md custom-shadow'>
+            className='absolute w-[200px] top-3/4' 
+            onMouseOver={() => toggleShowServices(true)} 
+            onMouseLeave={() => toggleShowServices(false)}>
+                <ul className='text-center custom-shadow bg-white rounded-md'>
                 {services.map(data => (
-                    <li>{data.name}</li>
+                    <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services'>
+                        {data.name}
+                    </li>
                 ))}
                 </ul>
             </div>
