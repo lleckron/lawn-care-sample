@@ -1,23 +1,32 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import './LawnCareHeader.css'
-import { Transition } from 'react-transition-group';
 import { ServicesObj } from '../../models/services.js'
 import phone from './assets/phone.png'
 import email from './assets/email.png'
+import { motion as m, AnimatePresence } from 'framer-motion'
 
 
-function LawnCareHeader() {
+export default function LawnCareHeader() {
 
     const[showServices, setShowServices] = useState(false)
-    const[hamburgerMenuExpand, sethamburgerMenuExpand] = useState(true)
+    const[hamburgerMenuExpand, setHamburgerMenuExpand] = useState(false)
 
     function toggleShowServices(state: boolean) {
         setShowServices(state)
     }
 
-    function toggleHamburgerMenuExpand(state: boolean) {
-        sethamburgerMenuExpand(state)
+    function toggleHamburgerMenu() {
+        setHamburgerMenuExpand(!hamburgerMenuExpand)
     }
+
+    const menuAnimation = {
+        initial: {height: 0, opacity: 0},
+        animate: {height: '3rem', opacity: 1},
+        exit: {height: 0, opacity: 0},
+        transition: {duration: .3, ease: "easeInOut"},
+    }
+
+
 
     function ServicesMenu() {
         const services = ServicesObj()
@@ -25,7 +34,7 @@ function LawnCareHeader() {
         return (
             <div id="services-menu" 
             className='absolute w-[200px] top-[70%]' 
-            onMouseOver={() => toggleShowServices(true)} 
+            onMouseOver={() => toggleShowServices(false)} 
             onMouseLeave={() => toggleShowServices(false)}>
                 <ul className='text-center custom-shadow bg-white rounded-md'>
                 {services.map((data, index) => (
@@ -35,19 +44,6 @@ function LawnCareHeader() {
                 ))}
                 </ul>
             </div>
-        )
-    }
-
-    function HamburgerMenuExpand() {
-        const nodeRef = useRef(null);
-        return (
-            <Transition nodeRef={nodeRef} in={hamburgerMenuExpand}>
-                <div className='absolute bg-medium-gray w-full left-0 top-full'>
-                    <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>Home</p>
-                    <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>About Us</p>
-                    <p className='flex justify-center items-center h-12 border-b-[2px] border-b-black'>Services</p>
-                </div>
-            </Transition>
         )
     }
 
@@ -97,16 +93,26 @@ function LawnCareHeader() {
 
                 <div id="hamburger-menu" 
                 className='flex relative flex-col justify-center items-center w-8 h-full'
-                onClick={() => toggleHamburgerMenuExpand(!hamburgerMenuExpand)}>
+                onClick={toggleHamburgerMenu}>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                 </div>
-                {hamburgerMenuExpand && <HamburgerMenuExpand />}
+                <AnimatePresence>
+                    {hamburgerMenuExpand && (  
+                        <m.div className='absolute w-full left-0 top-full'
+                        initial={{height: 0, background: 'rgb(176 176 176)'}}
+                        animate={{height: 'auto'}}
+                        exit={{height: 0}}
+                        transition={{duration: .3, ease: "easeInOut"}}
+                        key="hamburgerMenu">
+                            <m.p {...menuAnimation} key="p-1" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray'>Home</m.p>
+                            <m.p {...menuAnimation} key="p-2" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray'>About Us</m.p>
+                            <m.p {...menuAnimation} key="p-3" className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray'>Services</m.p>
+                        </m.div>
+                    )}
+                </AnimatePresence>
             </nav>
         </header>
 	)
 }
-
-
-export default LawnCareHeader
