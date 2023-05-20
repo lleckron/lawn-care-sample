@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 import './LawnCareHeader.css'
 import { ServicesObj } from '../../models/services.js'
+import phone from './assets/phone.png'
+import email from './assets/email.png'
 
 
 function LawnCareHeader() {
 
-    const[showServices, setShowServices] = useState(true)
+    const[showServices, setShowServices] = useState(false)
+    const[hambugerMenuExpand, setHambugerMenuExpand] = useState(true)
 
     function toggleShowServices(state: boolean) {
         setShowServices(state)
+    }
+
+    function toggleHamburgerMenuExpand(state: boolean) {
+        setHambugerMenuExpand(state)
     }
 
     function ServicesMenu() {
@@ -16,12 +23,12 @@ function LawnCareHeader() {
 
         return (
             <div id="services-menu" 
-            className='absolute w-[200px] top-3/4' 
+            className='absolute w-[200px] top-[70%]' 
             onMouseOver={() => toggleShowServices(true)} 
             onMouseLeave={() => toggleShowServices(false)}>
                 <ul className='text-center custom-shadow bg-white rounded-md'>
-                {services.map(data => (
-                    <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services'>
+                {services.map((data, index) => (
+                    <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services' key={index}>
                         {data.name}
                     </li>
                 ))}
@@ -30,12 +37,36 @@ function LawnCareHeader() {
         )
     }
 
+    function HamburgerMenuExpand() {
+        return (
+            <div className='absolute bg-medium-gray w-full left-0 top-full'>
+                <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>Home</p>
+                <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>About Us</p>
+                <p className='flex justify-center items-center h-12 border-b-[2px] border-b-black'>Services</p>
+            </div>
+        )
+    }
+
     return (
-    	<header className="flex justify-center items-center mt-8 mr-auto mb-auto ml-auto w-4/5 min-w-[650px] h-20 bg-forest-green rounded-xl custom-shadow">
-            <nav className="flex flex-row justify-between w-full h-full ml-auto mr-auto pl-8 pr-8">
+    	<header className="flex flex-col justify-center items-center min-w-[350px] w-full h-28 bg-forest-green custom-shadow">
+
+            <div className='bg-white w-full min-w-[300px] h-8'>
+                <div className='flex justify-center items-end '>
+                    <div className='flex flex-row justify-center items-center'>
+                        <img src={phone} alt="phone" className='h-5 xxs:ml-1 sm:ml-5 xxs:mr-1 sm:mr-2 mt-1'/>
+                        <p className='xxs:text-xs sm:text-base'>(765)-123-4567</p>
+                    </div>
+                    <div className='flex flex-row justify-center items-center mr-2 ml-6'>
+                        <img src={email} alt="email" className='h-5 xxs:ml-1 sm:ml-5 xxs:mr-2 sm:mr-3 mt-1'/>
+                        <p className='xxs:text-xs sm:text-base'>samplebusiness@email.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <nav className="flex flex-row justify-between relative w-full h-full ml-auto mr-auto pl-8 pr-8">
 
                 <div className="flex justify-center items-center h-full w-3/6">
-		    		<h1 className='flex justify-center items-center h-full min-w-[310px] text-neon-green font-bold text-4xl title-text-shadow hover:cursor-pointer'>Sample Lawn Care</h1>
+		    		<h1 className='flex justify-center items-center h-full min-w-[310px] text-neon-green font-bold text-3xl sm:text-4xl ml-12 sm:ml-0 title-text-shadow hover:cursor-pointer'>Sample Lawn Care</h1>
                 </div>
 
 		    	<div id="header-menu-full" className="flex justify-center items-center h-full w-3/6">
@@ -60,15 +91,14 @@ function LawnCareHeader() {
                     </div>
                 </div>
 
-                <div id="hamburger-menu">
-                    <input id="menu-toggle" type="checkbox" />
-                    <ul id="header-menu-shrink">
-                        <li>One</li>
-                        <li>Two</li>
-                        <li>Three</li>
-                    </ul>
+                <div id="hamburger-menu" 
+                className='flex relative flex-col justify-center items-center w-8 h-full'
+                onClick={() => toggleHamburgerMenuExpand(!hambugerMenuExpand)}>
+                    <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
+                    <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
+                    <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                 </div>
-
+                {hambugerMenuExpand && <HamburgerMenuExpand />}
             </nav>
         </header>
 	)

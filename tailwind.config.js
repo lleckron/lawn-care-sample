@@ -4,7 +4,16 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
+    screens: {
+      xxs: '100px',
+      xs: '300px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
     colors: {
+      'black': '#000000',
       'neon-green': '#39FF14',
       'forest-green': '#228B22',
       'dark-forest-green': '#1B6F1B',
