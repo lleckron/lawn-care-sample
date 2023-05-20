@@ -33,8 +33,8 @@ export default function LawnCareHeader() {
 
         return (
             <div id="services-menu" 
-            className='absolute w-[200px] top-[70%]' 
-            onMouseOver={() => toggleShowServices(false)} 
+            className='absolute w-[200px] top-[68%]' 
+            onMouseOver={() => toggleShowServices(true)} 
             onMouseLeave={() => toggleShowServices(false)}>
                 <ul className='text-center custom-shadow bg-white rounded-md'>
                 {services.map((data, index) => (
