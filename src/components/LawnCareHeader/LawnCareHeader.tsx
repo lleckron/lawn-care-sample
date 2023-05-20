@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './LawnCareHeader.css'
+import { Transition } from 'react-transition-group';
 import { ServicesObj } from '../../models/services.js'
 import phone from './assets/phone.png'
 import email from './assets/email.png'
@@ -8,14 +9,14 @@ import email from './assets/email.png'
 function LawnCareHeader() {
 
     const[showServices, setShowServices] = useState(false)
-    const[hambugerMenuExpand, setHambugerMenuExpand] = useState(true)
+    const[hamburgerMenuExpand, sethamburgerMenuExpand] = useState(true)
 
     function toggleShowServices(state: boolean) {
         setShowServices(state)
     }
 
     function toggleHamburgerMenuExpand(state: boolean) {
-        setHambugerMenuExpand(state)
+        sethamburgerMenuExpand(state)
     }
 
     function ServicesMenu() {
@@ -38,12 +39,15 @@ function LawnCareHeader() {
     }
 
     function HamburgerMenuExpand() {
+        const nodeRef = useRef(null);
         return (
-            <div className='absolute bg-medium-gray w-full left-0 top-full'>
-                <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>Home</p>
-                <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>About Us</p>
-                <p className='flex justify-center items-center h-12 border-b-[2px] border-b-black'>Services</p>
-            </div>
+            <Transition nodeRef={nodeRef} in={hamburgerMenuExpand}>
+                <div className='absolute bg-medium-gray w-full left-0 top-full'>
+                    <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>Home</p>
+                    <p className='flex justify-center items-center h-12 border-b-[1px] border-b-white'>About Us</p>
+                    <p className='flex justify-center items-center h-12 border-b-[2px] border-b-black'>Services</p>
+                </div>
+            </Transition>
         )
     }
 
@@ -93,12 +97,12 @@ function LawnCareHeader() {
 
                 <div id="hamburger-menu" 
                 className='flex relative flex-col justify-center items-center w-8 h-full'
-                onClick={() => toggleHamburgerMenuExpand(!hambugerMenuExpand)}>
+                onClick={() => toggleHamburgerMenuExpand(!hamburgerMenuExpand)}>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                 </div>
-                {hambugerMenuExpand && <HamburgerMenuExpand />}
+                {hamburgerMenuExpand && <HamburgerMenuExpand />}
             </nav>
         </header>
 	)
