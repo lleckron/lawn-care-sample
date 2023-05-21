@@ -1,6 +1,7 @@
 import React/*, { useState }*/ from 'react'
 import './LawnCareDescription.css'
 import background from './assets/grass.avif'
+import DescriptionCard from '../DescriptionCard/DescriptionCard.tsx'
 //import { motion as m, AnimatePresence } from 'framer-motion'
 
 export default function LawnCareHeader() {
@@ -12,13 +13,15 @@ export default function LawnCareHeader() {
             <div className='flex flex-row relative w-full h-[400px] sm:h-[500px] md:h-[650px]'>
                 <img src={background} alt="lawn-background" className='w-full bg-cover h-full relative z-10'/>
                 <div className='absolute w-full z-[15] top-[15%]'>
-                    <p className='p-0 m-0 text-center font-bold text-white text-[34px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl img-text-shadow'>The Best in the Business</p>
+                    <p className='p-0 m-0 text-center font-bold text-white text-[33px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl img-text-shadow'>The Best in the Business</p>
                 </div>
             
                 <div className='absolute w-full z-[15] top-[40%]'>
                     <p className='p-0 m-0 text-center text-white xxs:text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl img-text-shadow'>See what we can do for you</p>
                     <div className='w-full'>
-                        
+                        <DescriptionCard 
+                        title={"Test Card"} 
+                        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} />
                     </div>
                 </div>
             </div>
