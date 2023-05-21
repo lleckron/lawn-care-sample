@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import LawnCareHeader from './components/LawnCareHeader/LawnCareHeader.tsx';
+import LawnCareDescription from './components/LawnCareDescription/LawnCareDescription.tsx';
 
 function App() {
 	return (
@@ -8,9 +9,7 @@ function App() {
 			<link href="/dist/output.css" rel="stylesheet"></link>
 
 			<LawnCareHeader />
-			<div className='container'>
-				<p>Test</p>
-			</div>
+			<LawnCareDescription />
 		</React.Fragment>
 	)
 		

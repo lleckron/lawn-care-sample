@@ -80,8 +80,8 @@ export default function LawnCareHeader() {
                             <p className='text-xl text-white link-text-shadow hover:cursor-pointer'>About Us</p>
                         </span>
                     </div>
-                    <div className='flex justify-center items-center relative h-full w-2/6 hover:cursor-pointer '>
-                        <span id="services-span" className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'
+                    <div className='flex justify-center items-center relative h-full w-2/6 hover:cursor-pointer z-20'>
+                        <span id="services-span" className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer'
                         onMouseOver={() => toggleShowServices(true)}
                         onMouseLeave={() => toggleShowServices(false)}>
                             <p className='text-xl text-white link-text-shadow '>Services</p>
@@ -92,7 +92,7 @@ export default function LawnCareHeader() {
                 </div>
 
                 <div id="hamburger-menu" 
-                className='flex relative flex-col justify-center items-center w-8 h-full'
+                className='flex relative flex-col justify-center items-center w-8 h-full hover:cursor-pointer'
                 onClick={toggleHamburgerMenu}>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
@@ -100,15 +100,15 @@ export default function LawnCareHeader() {
                 </div>
                 <AnimatePresence>
                     {hamburgerMenuExpand && (  
-                        <m.div className='absolute w-full left-0 top-full'
+                        <m.div className='absolute w-full left-0 top-full z-20'
                         initial={{height: 0, background: 'rgb(176 176 176)'}}
                         animate={{height: 'auto'}}
                         exit={{height: 0}}
                         transition={{duration: .3, ease: "easeInOut"}}
                         key="hamburgerMenu">
-                            <m.p {...menuAnimation} key="p-1" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray'>Home</m.p>
-                            <m.p {...menuAnimation} key="p-2" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray'>About Us</m.p>
-                            <m.p {...menuAnimation} key="p-3" className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray'>Services</m.p>
+                            <m.p {...menuAnimation} key="p-1" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'>Home</m.p>
+                            <m.p {...menuAnimation} key="p-2" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'>About Us</m.p>
+                            <m.p {...menuAnimation} key="p-3" className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray hover:cursor-pointer hover:underline'>Services</m.p>
                         </m.div>
                     )}
                 </AnimatePresence>
