@@ -37,7 +37,7 @@ export default function LawnCareHeader() {
             onMouseOver={() => toggleShowServices(true)} 
             onMouseLeave={() => toggleShowServices(false)}>
                 <ul className='text-center custom-shadow bg-white rounded-md'>
-                {services.map((data, index) => (
+                {services.map((data: { name: string }, index: React.Key ) => (
                     <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services' key={index}>
                         {data.name}
                     </li>

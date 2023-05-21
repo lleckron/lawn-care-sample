@@ -1,7 +1,13 @@
 import React/*, { useState }*/ from 'react'
 
-export default function DescriptionCard({ title, description }) {
+type DescriptionCardProps = {
+    title: string,
+    description: string
+}
 
+
+export default function DescriptionCard( props: DescriptionCardProps ) {
+    const { title, description } = props
     return (
         <div>
             <p>{title}</p>
