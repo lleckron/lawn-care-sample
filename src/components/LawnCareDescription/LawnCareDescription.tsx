@@ -1,12 +1,9 @@
 import React/*, { useState }*/ from 'react'
 import './LawnCareDescription.css'
 import background from './assets/grass.avif'
-import DescriptionCard from '../DescriptionCard/DescriptionCard.tsx'
 //import { motion as m, AnimatePresence } from 'framer-motion'
 
 export default function LawnCareHeader() {
-
-
 
     return (
         <div className='flex relative w-full mt-7 min-w-[300px]' id="description-container">
@@ -16,12 +13,11 @@ export default function LawnCareHeader() {
                     <p className='p-0 m-0 text-center font-bold text-white text-[33px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl img-text-shadow'>The Best in the Business</p>
                 </div>
             
-                <div className='absolute w-full z-[15] top-[40%]'>
-                    <p className='p-0 m-0 text-center text-white xxs:text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl img-text-shadow'>See what we can do for you</p>
-                    <div className='w-full'>
-                        <DescriptionCard 
-                        title={"Test Card"} 
-                        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."} />
+                <div className='absolute flex flex-col justify-center items-center w-full z-[15] top-[40%]'>
+                    <p className='p-0 m-0 text-center w-[75%] text-white sm:whitespace-nowrap xxs:text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl img-text-shadow font-[500]'>Your lawn and landscape cared for the way they should be</p>
+                    <div className='flex flex-wrap justify-center relative w-full mt-[80px]'>
+                        <button type='button' className='bg-button-green w-[130px] h-[60px] text-white font-[500] mr-[15px] img-text-shadow shadow-[0_0_10px_#000000] hover:scale-105 hover:duration-200 hover:shadow-[0_0_20px_#000000]'>See Our Gallery</button>
+                        <button type='button' className='bg-button-green w-[130px] h-[60px] text-white font-[500] ml-[15px] img-text-shadow shadow-[0_0_10px_#000000] hover:scale-105 hover:duration-200 hover:shadow-[0_0_20px_#000000]'>Pricing</button>
                     </div>
                 </div>
             </div>
