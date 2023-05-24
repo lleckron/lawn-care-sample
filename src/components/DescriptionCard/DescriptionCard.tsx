@@ -3,16 +3,23 @@ import './DescriptionCard.css'
 
 type DescriptionCardProps = {
     title: string,
-    description: string
+    description: string,
+    imageSrc: string,
+    imageAlt: string
 }
 
 
 export default function DescriptionCard( props: DescriptionCardProps ) {
-    const { title, description } = props
+    const { title, description, imageSrc, imageAlt } = props
     return (
-        <div className='flex flex-col flex-[1_0_25%] mr-[15px] ml-[15px] sm:mr-[30px] sm:ml-[30px] bg-light-gray rounded-xl max-w-[100px] sm:max-w-[150px] md:max-w-[200px] h-[150px] sm:h-[200px] md:h-[250px] shadow-[0_0_15px_#000000] hover:cursor-pointer hover:scale-105 hover:duration-200 hover:shadow-[0_0_25px_#000000]'>
-            <p>{title}</p>
-            <p>{description}</p>
+        <div className='flex flex-col mt-[30px] md:mt-0 md:mr-[30px] md:ml-[30px] bg-white rounded-xl w-[250px] lg:w-[300px] h-[250px] shadow-[0_0_7px_#000000]'>
+            <div className='flex justify-center w-full h-[25%] mt-3'>
+                <img src={imageSrc} alt={imageAlt} className='w-20 h-16'/>
+            </div>
+            <div className='flex flex-col justify-start items-center w-full h-[75%]'>
+                <p className='relative text-center font-bold text-2xl top-0'>{title}</p>
+                <p className='relative text-center w-[90%] text-lg'>{description}</p>
+            </div>
         </div>
     )
 }

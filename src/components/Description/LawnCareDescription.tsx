@@ -10,7 +10,7 @@ export default function LawnCareHeader() {
             <div className='flex flex-row relative w-full h-[400px] sm:h-[500px] md:h-[650px]'>
                 <img src={background} alt="lawn-background" className='w-full bg-cover h-full relative z-10'/>
                 <div className='absolute w-full z-[15] top-[15%]'>
-                    <p className='p-0 m-0 text-center font-bold text-white text-[33px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl img-text-shadow'>The Best in the Business</p>
+                    <p className='p-0 m-0 text-center font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl img-text-shadow'>The Best in the Business</p>
                 </div>
             
                 <div className='absolute flex flex-col justify-center items-center w-full z-[15] top-[40%]'>

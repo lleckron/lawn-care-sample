@@ -1,7 +1,8 @@
-import './App.css';
-import React from 'react';
-import LawnCareHeader from './components/LawnCareHeader/LawnCareHeader.tsx';
-import LawnCareDescription from './components/LawnCareDescription/LawnCareDescription.tsx';
+import './App.css'
+import React from 'react'
+import LawnCareHeader from './components/Header/LawnCareHeader.tsx'
+import LawnCareDescription from './components/Description/LawnCareDescription.tsx'
+import BusinessModel from './components/BusinessModel/BusinessModel.tsx'
 
 function App() {
 	return (
@@ -10,10 +11,9 @@ function App() {
 
 			<LawnCareHeader />
 			<LawnCareDescription />
+			<BusinessModel />
 		</React.Fragment>
 	)
-		
-		
 }
 
-export default App;
+export default App
