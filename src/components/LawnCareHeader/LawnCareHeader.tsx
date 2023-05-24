@@ -52,12 +52,12 @@ export default function LawnCareHeader() {
 
             <div className='bg-white w-full min-w-[300px] h-8'>
                 <div className='flex justify-center items-end '>
-                    <div className='flex flex-row justify-center items-center'>
-                        <img src={phone} alt="phone" className='h-5 xxs:ml-1 sm:ml-5 xxs:mr-1 sm:mr-2 mt-1'/>
+                    <div className='flex flex-row justify-center items-center hover:cursor-pointer hover:text-blue hover:underline'>
+                        <img src={phone} alt="phone" className='h-5 xxs:ml-1 sm:ml-5 xxs:mr-1 sm:mr-2 mt-1 select-none'/>
                         <p className='xxs:text-xs sm:text-base'>(765)-123-4567</p>
                     </div>
-                    <div className='flex flex-row justify-center items-center mr-2 ml-6'>
-                        <img src={email} alt="email" className='h-5 xxs:ml-1 sm:ml-5 xxs:mr-2 sm:mr-3 mt-1'/>
+                    <div className='flex flex-row justify-center items-center mr-2 ml-6 hover:cursor-pointer hover:text-blue hover:underline'>
+                        <img src={email} alt="email" className='h-5 xxs:ml-1 sm:ml-5 xxs:mr-2 sm:mr-3 mt-1 select-none'/>
                         <p className='xxs:text-xs sm:text-base'>samplebusiness@email.com</p>
                     </div>
                 </div>

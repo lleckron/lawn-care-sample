@@ -18,6 +18,7 @@ module.exports = {
       'forest-green': '#228B22',
       'dark-forest-green': '#1B6F1B',
       'button-green': '#A2C046',
+      'blue': '#0000FF',
       'light-gray': '#C0C0C0',
       'medium-gray': '#B0B0B0',
       'white': '#FFFFFF'
