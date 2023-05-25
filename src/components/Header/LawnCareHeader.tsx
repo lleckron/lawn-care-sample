@@ -4,6 +4,7 @@ import { ServicesObj } from '../../models/services.js'
 import phone from './assets/phone.png'
 import email from './assets/email.png'
 import { motion as m, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 
 export default function LawnCareHeader() {
@@ -66,18 +67,30 @@ export default function LawnCareHeader() {
             <nav className="flex flex-row justify-between relative w-full h-full ml-auto mr-auto pl-8 pr-8">
 
                 <div className="flex justify-center items-center h-full w-3/6">
-		    		<h1 className='flex justify-center items-center h-full min-w-[310px] text-neon-green font-bold text-3xl sm:text-4xl ml-12 sm:ml-0 title-text-shadow hover:cursor-pointer'>Sample Lawn Care</h1>
+		    		<h1 className='flex justify-center items-center h-full min-w-[310px] text-neon-green font-bold text-3xl sm:text-4xl ml-12 sm:ml-0 title-text-shadow hover:cursor-pointer'>
+                        <Link to="/">
+                            Sample Lawn Care
+                        </Link>
+                    </h1>
                 </div>
 
 		    	<div id="header-menu-full" className="flex justify-center items-center h-full w-3/6">
                     <div className='flex justify-center items-center h-full w-2/6 '>
                         <span className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'>
-                            <p className='text-xl text-white link-text-shadow '>Home</p>
+                            <p className='text-xl text-white link-text-shadow '>
+                                <Link to="/">
+                                    Home
+                                </Link>
+                            </p>
                         </span>
                     </div>
                     <div className='flex justify-center items-center h-full w-2/6 '>
                         <span className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'>
-                            <p className='text-xl text-white link-text-shadow hover:cursor-pointer'>About Us</p>
+                            <p className='text-xl text-white link-text-shadow hover:cursor-pointer'>
+                                <Link to="/testRoutes">
+                                    About Us
+                                </Link>    
+                            </p>
                         </span>
                     </div>
                     <div className='flex justify-center items-center relative h-full w-2/6 hover:cursor-pointer z-20'>
