@@ -67,31 +67,25 @@ export default function LawnCareHeader() {
             <nav className="flex flex-row justify-between relative w-full h-full ml-auto mr-auto pl-8 pr-8">
 
                 <div className="flex justify-center items-center h-full w-3/6">
-		    		<h1 className='flex justify-center items-center h-full min-w-[310px] text-neon-green font-bold text-3xl sm:text-4xl ml-12 sm:ml-0 title-text-shadow hover:cursor-pointer'>
-                        <Link to="/">
-                            Sample Lawn Care
-                        </Link>
+		    		<h1 className='flex justify-center items-center h-full min-w-[310px] text-neon-green font-bold text-3xl sm:text-4xl ml-12 sm:ml-0 title-text-shadow'>
+                        Sample Lawn Care
                     </h1>
                 </div>
 
 		    	<div id="header-menu-full" className="flex justify-center items-center h-full w-3/6">
                     <div className='flex justify-center items-center h-full w-2/6 '>
-                        <span className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'>
-                            <p className='text-xl text-white link-text-shadow '>
-                                <Link to="/">
-                                    Home
-                                </Link>
-                            </p>
-                        </span>
+                        <Link to="/">
+                            <span className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'>
+                                <p className='text-xl text-white link-text-shadow '>Home</p>
+                            </span>
+                        </Link>
                     </div>
                     <div className='flex justify-center items-center h-full w-2/6 '>
-                        <span className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'>
-                            <p className='text-xl text-white link-text-shadow hover:cursor-pointer'>
-                                <Link to="/testRoutes">
-                                    About Us
-                                </Link>    
-                            </p>
-                        </span>
+                        <Link to="/aboutUs">
+                            <span className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer hover:bg-dark-forest-green'>
+                                <p className='text-xl text-white link-text-shadow hover:cursor-pointer'>About Us</p>
+                            </span>
+                        </Link>  
                     </div>
                     <div className='flex justify-center items-center relative h-full w-2/6 hover:cursor-pointer z-20'>
                         <span id="services-span" className='flex justify-center items-center h-[40px] w-100px rounded-md hover:cursor-pointer'
@@ -119,9 +113,24 @@ export default function LawnCareHeader() {
                         exit={{height: 0}}
                         transition={{duration: .3, ease: "easeInOut"}}
                         key="hamburgerMenu">
-                            <m.p {...menuAnimation} key="p-1" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'>Home</m.p>
-                            <m.p {...menuAnimation} key="p-2" className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'>About Us</m.p>
-                            <m.p {...menuAnimation} key="p-3" className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray hover:cursor-pointer hover:underline'>Services</m.p>
+                            <m.p {...menuAnimation} key="p-1" 
+                            className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline' 
+                            onClick={toggleHamburgerMenu}>
+                                <Link to="/">
+                                    Home
+                                </Link>
+                            </m.p>
+                            <m.p {...menuAnimation} key="p-2" 
+                            className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'
+                            onClick={toggleHamburgerMenu}>
+                                <Link to="/aboutUs">
+                                    About Us
+                                </Link>  
+                            </m.p>
+                            <m.p {...menuAnimation} key="p-3" 
+                            className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray hover:cursor-pointer hover:underline'
+                            onClick={toggleHamburgerMenu}>
+                                Services</m.p>
                         </m.div>
                     )}
                 </AnimatePresence>

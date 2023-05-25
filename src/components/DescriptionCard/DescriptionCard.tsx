@@ -18,7 +18,7 @@ export default function DescriptionCard( props: DescriptionCardProps ) {
             </div>
             <div className='flex flex-col justify-start items-center w-full h-[75%]'>
                 <p className='relative text-center font-bold text-2xl top-0'>{title}</p>
-                <p className='relative text-center w-[90%] text-lg'>{description}</p>
+                <p className='relative text-center w-90% text-lg'>{description}</p>
             </div>
         </div>
     )

@@ -4,10 +4,10 @@ import LawnCareHeader from './components/Header/LawnCareHeader.tsx'
 //import LawnCareDescription from './components/Description/LawnCareDescription.tsx'
 //import BusinessModel from './components/BusinessModel/BusinessModel.tsx'
 import Home from './components/Home/Home'
-import TestRoutes from './components/TestRoutes/TestRoutes.tsx'
+import AboutUs from './components/AboutUs/AboutUs.tsx'
 import { Route, Routes } from 'react-router-dom'
 
-function App() {
+export default function App() {
 	return (
 
 		<React.Fragment>
@@ -15,10 +15,8 @@ function App() {
 			<LawnCareHeader />
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/testRoutes" element={<TestRoutes />} />
+				<Route path="/aboutUs" element={<AboutUs />} />
 			</Routes>
 		</React.Fragment>
 	)
 }
-
-export default App
