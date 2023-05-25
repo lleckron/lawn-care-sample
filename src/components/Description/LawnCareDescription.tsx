@@ -1,6 +1,6 @@
 import React/*, { useState }*/ from 'react'
 import './LawnCareDescription.css'
-import background from './assets/grass.avif'
+import background from './assets/grass.jpg'
 //import { motion as m, AnimatePresence } from 'framer-motion'
 
 export default function LawnCareHeader() {

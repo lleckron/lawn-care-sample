@@ -15,7 +15,7 @@ export default function BusinessModel() {
             imageAlt='efficient'/>
 
             <DescriptionCard title='Affordable' 
-            description="Our commitment is to deliver high-quality lawn care services at prices that won't break the bank"
+            description="Our commitment is to deliver high-quality lawn care services at prices that won't break the bank."
             imageSrc={Affordable}
             imageAlt='affordable'/>
 
