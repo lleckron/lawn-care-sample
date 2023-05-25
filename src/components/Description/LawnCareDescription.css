@@ -1,3 +1,12 @@
 .img-text-shadow {
     text-shadow: 0 0 6px #000;
 }
+
+#description-container {
+    z-index: 12;
+    background-image: -webkit-linear-gradient(rgba(0,0,0, 0) 50%,rgba(0,0,0, 1) 100%);
+    background-image: -moz-linear-gradient(rgba(0,0,0, 0) 50%,rgba(0,0,0, 1) 100%);
+    background-image: -o-linear-gradient(rgba(0,0,0, 0) 50%,rgba(0,0,0, 1) 100%);
+    background-image: -ms-linear-gradient(rgba(0,0,0, 0) 50%,rgba(0,0,0, 1) 100%);
+    background-image: linear-gradient(rgba(0,0,0, 0) 50%,rgba(0,0,0, 1) 100%);
+}

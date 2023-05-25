@@ -3,22 +3,22 @@ export function ServicesObj() {
         {
             'name': 'Landscaping',
             'rate': 50,
-            'availableDays': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+            'services': ['Mowing', 'Weeding', 'Trimming']
         },
         {
             'name': 'Tree Removal',
             'rate': 200,
-            'availableDays': ['Friday', 'Saturday', 'Sunday']
+            'services': ['Tree Removal']
         },
         {
             'name': 'Pest & Lawn Control',
             'rate': 35,
-            'availableDays': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+            'services': ['Pest Spray', 'Miracle Grow', '']
         },
         {
             'name': 'Pressure Washing',
             'rate': 40,
-            'availableDays': ['Monday', 'Tuesday', 'Wednesday', 'Thursday']
+            'services': ['Sidewalk', 'House / Garage Exterior', 'Patio / Deck']
         }
     ]
 
