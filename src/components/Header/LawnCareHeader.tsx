@@ -6,8 +6,11 @@ import email from './assets/email.png'
 import { motion as m, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
+type LawnCareHeaderProps = {
+	setSelectedService: (service: string) => void
+}
 
-export default function LawnCareHeader() {
+export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderProps) {
 
     const[showServices, setShowServices] = useState(false)
     const[hamburgerMenuExpand, setHamburgerMenuExpand] = useState(false)
@@ -18,6 +21,11 @@ export default function LawnCareHeader() {
 
     function toggleHamburgerMenu() {
         setHamburgerMenuExpand(!hamburgerMenuExpand)
+    }
+
+    const onServiceClick = (service: string) => {
+        setSelectedService(service)
+        toggleShowServices(false)
     }
 
     const menuAnimation = {
@@ -39,8 +47,12 @@ export default function LawnCareHeader() {
             onMouseLeave={() => toggleShowServices(false)}>
                 <ul className='text-center custom-shadow bg-white rounded-md'>
                 {services.map((data: { name: string }, index: React.Key ) => (
-                    <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services' key={index}>
-                        {data.name}
+                    <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services' 
+                    key={index}
+                    onClick={() => onServiceClick(data.name)}>
+                        <Link to="/serviceSelection" className='flex justify-center items-center w-full h-full'>
+                            {data.name}
+                        </Link>
                     </li>
                 ))}
                 </ul>
