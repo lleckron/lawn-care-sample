@@ -6,7 +6,7 @@ export default function AboutUs() {
 
     return (
         <div className="flex flex-col items-center w-[75%] mt-7 ml-auto mr-auto pb-10">
-            <div className="flex flex-row relative w-[310px] sm:w-[600px] h-[225px] sm:h-[400px]">
+            <div className="flex flex-row relative w-[310px] sm:w-[600px] h-[225px] sm:h-[300px]">
                 <img src={Team} alt="team" className="w-full bg-cover h-full relative z-10" />
             </div>
             <div className="flex flex-col relative w-full mt-10">
