@@ -46,17 +46,50 @@ export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderPro
             onMouseOver={() => toggleShowServices(true)} 
             onMouseLeave={() => toggleShowServices(false)}>
                 <ul className='text-center custom-shadow bg-white rounded-md'>
-                {services.map((data: { name: string }, index: React.Key ) => (
+                {services.map((data: { type: string }, index: React.Key ) => (
                     <li className='flex justify-center items-center h-12 bg-white first:rounded-t-md last:rounded-b-md hover:bg-light-gray services' 
                     key={index}
-                    onClick={() => onServiceClick(data.name)}>
+                    onClick={() => onServiceClick(data.type)}>
                         <Link to="/serviceSelection" className='flex justify-center items-center w-full h-full'>
-                            {data.name}
+                            {data.type}
                         </Link>
                     </li>
                 ))}
                 </ul>
             </div>
+        )
+    }
+
+    function HamburgerMenu() {
+        return (
+            <m.div className='absolute w-full left-0 top-full z-20'
+            initial={{height: 0, background: 'rgb(176 176 176)'}}
+            animate={{height: 'auto'}}
+            exit={{height: 0}}
+            transition={{duration: .3, ease: "easeInOut"}}
+            key="hamburgerMenu">
+                <m.p {...menuAnimation} key="p-1" 
+                className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline' 
+                onClick={toggleHamburgerMenu}>
+                    <Link to="/">
+                        Home
+                    </Link>
+                </m.p>
+                <m.p {...menuAnimation} key="p-2" 
+                className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'
+                onClick={toggleHamburgerMenu}>
+                    <Link to="/aboutUs">
+                        About Us
+                    </Link>  
+                </m.p>
+                <m.p {...menuAnimation} key="p-3" 
+                className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray hover:cursor-pointer hover:underline'
+                onClick={toggleHamburgerMenu}>
+                    <Link to="/serviceSelection" className='flex justify-center items-center w-full h-full'>
+                        Services
+                    </Link>
+                </m.p>
+            </m.div>
         )
     }
 
@@ -118,33 +151,7 @@ export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderPro
                     <div className='flex bg-white h-1 w-full rounded-sm mt-1 mb-1 '></div>
                 </div>
                 <AnimatePresence>
-                    {hamburgerMenuExpand && (  
-                        <m.div className='absolute w-full left-0 top-full z-20'
-                        initial={{height: 0, background: 'rgb(176 176 176)'}}
-                        animate={{height: 'auto'}}
-                        exit={{height: 0}}
-                        transition={{duration: .3, ease: "easeInOut"}}
-                        key="hamburgerMenu">
-                            <m.p {...menuAnimation} key="p-1" 
-                            className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline' 
-                            onClick={toggleHamburgerMenu}>
-                                <Link to="/">
-                                    Home
-                                </Link>
-                            </m.p>
-                            <m.p {...menuAnimation} key="p-2" 
-                            className='flex justify-center items-center h-12 border-b-[1px] border-b-white bg-medium-gray hover:cursor-pointer hover:underline'
-                            onClick={toggleHamburgerMenu}>
-                                <Link to="/aboutUs">
-                                    About Us
-                                </Link>  
-                            </m.p>
-                            <m.p {...menuAnimation} key="p-3" 
-                            className='flex justify-center items-center h-12 border-b-[2px] border-b-black bg-medium-gray hover:cursor-pointer hover:underline'
-                            onClick={toggleHamburgerMenu}>
-                                Services</m.p>
-                        </m.div>
-                    )}
+                    {hamburgerMenuExpand && <HamburgerMenu />}
                 </AnimatePresence>
             </nav>
         </header>
