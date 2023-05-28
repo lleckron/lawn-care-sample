@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 //import { motion as m, AnimatePresence } from 'framer-motion'
 
 type LawnCareDescriptionProps = {
-	handleOnScheduleServiceButtonClick: (service: null) => void
+	handleOnScheduleServiceButtonClick: (service: string) => void
 }
 
 export default function LawnCareDescription({ handleOnScheduleServiceButtonClick }: LawnCareDescriptionProps) {
 
-    const onScheduleServiceButtonClick = (service: null) => {
+    const onScheduleServiceButtonClick = (service: string) => {
         handleOnScheduleServiceButtonClick(service)
     }
 
@@ -31,7 +31,7 @@ export default function LawnCareDescription({ handleOnScheduleServiceButtonClick
                         </button>
                         <button type='button' 
                         className='bg-button-green w-[135px] h-[60px] text-white font-[500] ml-[15px] img-text-shadow shadow-[0_0_10px_#000000] hover:scale-105 hover:duration-200 hover:shadow-[0_0_20px_#000000]'
-                        onClick={() => onScheduleServiceButtonClick(null)}>
+                        onClick={() => onScheduleServiceButtonClick('none')}>
                             <Link to="/serviceSelection" className='flex justify-center items-center w-full h-full'>
                                 Schedule Service
                             </Link>

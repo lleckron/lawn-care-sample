@@ -7,25 +7,33 @@ export function ServicesObj() {
                     "name": "Mowing",
                     "rateType": "hourly",
                     "rate": "20",
-                    "description": "Our expert mowing service keeps your lawn looking its best. With our professional equipment and skilled team, we\"ll give your lawn a clean and tidy cut, enhancing its overall charm. Sit back and enjoy a perfectly manicured lawn, courtesy of our friendly local landscapers."
+                    "description": "Our expert mowing service, for yards of any size.",
+                    "imageSrc": "",
+                    "imageAlt": "mowing"
                 }, 
                 {
                     "name": "Landscape Design",
                     "rateType": "hourly",
                     "rate": "30",
-                    "description": "Enhance your outdoor space with our professional landscape design services. We provide precise edging, mulching, flower bed prep, and plenty of other options to create a beautiful and functional landscape tailored to your preferences."
+                    "description": "Edging, mulching, sodding, flower bed prep, mulching, and plenty of other options.",
+                    "imageSrc": "",
+                    "imageAlt": "landscape design"
                 },
                 {
                     "name": "Tree and Shrub Care",
                     "rateType": "hourly",
-                    "rate": "40",
-                    "description": "Nurture the health and appearance of your trees and shrubs with our specialized care. From pruning and fertilization to pest control, we provide the essential services your plants need to thrive and beautify your landscape."
+                    "rate": "20",
+                    "description": "Trimming, pruning, fertilizing, and plenty of other options.",
+                    "imageSrc": "",
+                    "imageAlt": "tree"
                 },
                 {
-                    "name": "Seasonal Cleanup",
+                    "name": "Project Cleanup",
                     "rateType": "flat",
                     "rate": "100",
-                    "description": "Major project leave you with a mountain of clutter? Our seasonal cleanup services are designed to tackle post-construction, fall, or spring clean-ups. Let us handle the dirty work, so you can enjoy a tidy and well-maintained outdoor space throughout the year."
+                    "description": "Let us handle your post-construction, fall, or spring clean-ups.",
+                    "imageSrc": "",
+                    "imageAlt": "cleanup"
                 }
             ]
         },
@@ -33,10 +41,20 @@ export function ServicesObj() {
             "type": "Tree Removal",
             "services": [
                 {
-                    "name": "Tree Removal",
+                    "name": "Tree & Stump Removal",
                     "rateType": "flat",
                     "rate": "200",
-                    "description": "Say goodbye to old and hazardous trees with our safe tree and stump removal services. Let our team revive the aesthetic appeal of your landscape by safely removing trees and stumps."
+                    "description": "Say goodbye to that dead or hazardous tree.",
+                    "imageSrc": "",
+                    "imageAlt": "tree"
+                },
+                {
+                    "name": "Stump Removal",
+                    "rateType": "flat",
+                    "rate": "200",
+                    "description": "Get rid of that pesky stump that's overstayed its welcome.",
+                    "imageSrc": "",
+                    "imageAlt": "Stump"
                 }
             ]
         },
@@ -47,13 +65,17 @@ export function ServicesObj() {
                     "name": "Pest Spray",
                     "rateType": "flat",
                     "rate": "150",
-                    "description": "Our pest spray services effectively eliminate unwanted pests, safeguarding your lawn and garden from infestations. Our targeted sprays ensure a pest-free environment, allowing you to fully enjoy your outdoor spaces without any disruptions."
+                    "description": "Eliminate pests, protect your lawn and garden with our professional pest spray services.",
+                    "imageSrc": "",
+                    "imageAlt": "mowing"
                 },
                 {
                     "name": "Fertilizers",
                     "rateType": "flat",
                     "rate": "150",
-                    "description": "Fertilizers are the key to achieving a lush and vibrant lawn. Our carefully selected fertilizers provide the essential nutrients your landscape needs for healthy growth, resulting in a greener and more resilient turf."
+                    "description": "Give your lawn and garden a healthy head start with our quality fertilizers.",
+                    "imageSrc": "",
+                    "imageAlt": "mowing"
                 }
             ]
         },
@@ -64,19 +86,25 @@ export function ServicesObj() {
                     "name": "Sidewalk",
                     "rateType": "flat",
                     "rate": "100",
-                    "description": "Revitalize your sidewalks with our pressure washing services. Our powerful equipment eliminates years of dirt and stains, leaving your sidewalks looking clean and inviting."   
+                    "description": "Give your sidewalks new life with a thorough cleaning.",
+                    "imageSrc": "",
+                    "imageAlt": "mowing"
                 },
                 {
                     "name": "House / Garage Exterior",
                     "rateType": "flat",
                     "rate": "100",
-                    "description": "Transform the appearance of your home or garage exteriors with our professional pressure washing services. Our high-pressure cleaning method effectively removes dirt, grime, and mildew, restoring the beauty and cleanliness of your outside surfaces."   
+                    "description": "Make your house look 20 years younger and a fresh, vibrant look.",
+                    "imageSrc": "",
+                    "imageAlt": "mowing"
                 },
                 {
                     "name": "Patio / Deck",
                     "rateType": "flat",
                     "rate": "100",
-                    "description": "Enhance the appearance of your patios and decks with our high-quality pressure washing services. Eliminate dirt and stains, and bring back the beauty and cleanliness of your outdoor areas."   
+                    "description": "Revamp your outside space with a fresh wash.",
+                    "imageSrc": "",
+                    "imageAlt": "mowing"
                 }
             ]
         }

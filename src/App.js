@@ -8,7 +8,7 @@ import ServiceSelection from './components/ServiceSelection/ServiceSelection.tsx
 import { Route, Routes } from 'react-router-dom'
 
 export default function App() {
-	const [selectedService, setSelectedService] = useState(null)
+	const [selectedService, setSelectedService] = useState('none')
 
 	return (
 

@@ -1,44 +1,50 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { ServicesObj } from '../../models/services.js'
+import DescriptionCard from "../DescriptionCard/DescriptionCard"
 
 type ServiceSelectionProps = {
-    selectedService: string | null
+    selectedService: string
 }
 
 export default function ServiceSelection( props: ServiceSelectionProps) {
     const { selectedService } = props
     const[serviceSelected, setServiceSelected] = useState(false)
+    const [serviceData, setServiceData] = useState(Object)
     const services = ServicesObj()
 
-    function toggleServiceSelected(state: boolean) {
-        setServiceSelected(state)
-    }
+    useEffect(() => {
+        if(selectedService !== 'none') {
+            setServiceSelected(true)
+
+            for(const service of services) {
+                if(service.type === selectedService) {
+                    setServiceData(service.services)
+                }
+            }
+        }
+    }, [selectedService])
+
 
     function ShowAvailableServiceTypes() {
-
+        return (
+            <p>Select a service:</p>
+        )
     }
 
-    function ShowAvailableServicesFromType(type: string) {
-
-    }
-
-    function ShowSelectedServiceInfo() {
-
-        if(selectedService === null) {
-            return (
-                <p>No service Selected</p>
-            )
-        } else {
-            toggleServiceSelected(true)
-            return (
-                <p>Service is { selectedService }</p>
-            )
-        }
+    function ShowAvailableServicesFromType() {
+        return (
+            <div className='flex flex-col md:flex-row justify-center items-center relative w-full mt-20'>
+                {serviceData.map((data: { name: string, description: string, imageSrc: string, imageAlt: string}, index: React.Key ) => (
+                    <DescriptionCard title={data.name} description={data.description} imageSrc={data.imageSrc} imageAlt={data.imageAlt} key={index}/>
+                ))}
+            </div>
+        )
     }
 
     return(
         <div>
-            <ShowSelectedServiceInfo />
+            {!serviceSelected && <ShowAvailableServiceTypes />}
+            {serviceSelected && <ShowAvailableServicesFromType />}
         </div>
     )
 }

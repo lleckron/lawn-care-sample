@@ -3,12 +3,12 @@ import LawnCareDescription from '../Description/LawnCareDescription.tsx'
 import BusinessModel from '../BusinessModel/BusinessModel.tsx'
 
 type HomePageProps = {
-	setSelectedService: (service: null) => void
+	setSelectedService: (service: string) => void
 }
 
 export default function Home({ setSelectedService }: HomePageProps ) {
 
-	const handleServiceSelectionClick = (service: null) => {
+	const handleServiceSelectionClick = (service: string) => {
 		setSelectedService(service)
 	}
 
