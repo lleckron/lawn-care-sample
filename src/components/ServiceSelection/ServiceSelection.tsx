@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import React, { useEffect, useState } from "react"
 import { ServicesObj } from '../../models/services.js'
 import DescriptionCard from "../DescriptionCard/DescriptionCard"
 
@@ -10,7 +10,6 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
     const { selectedService } = props
     const[serviceSelected, setServiceSelected] = useState(false)
     const [serviceData, setServiceData] = useState(Object)
-    const flexContainerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
              if(selectedService !== 'none') {
@@ -33,10 +32,14 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
 
     function ShowAvailableServicesFromType() {
         return (
-            <div className='flex flex-col md:flex-row xs:justify-center sm:justify-start xl:justify-center items-center sm:flex-wrap sm:content-between relative mt-20 sm:ml-20'
-            ref={flexContainerRef}>
+            <div className='flex flex-col md:flex-row justify-center items-center flex-wrap relative mt-20'>
                 {serviceData.map((data: { name: string, description: string, imageSrc: string, imageAlt: string}, index: React.Key ) => (
-                    <DescriptionCard title={data.name} description={data.description} imageSrc={data.imageSrc} imageAlt={data.imageAlt} key={index}/>
+                    <DescriptionCard title={data.name} 
+                    description={data.description} 
+                    imageSrc={data.imageSrc} 
+                    imageAlt={data.imageAlt} 
+                    hoverEffect={true}
+                    key={index}/>
                 ))}
             </div>
         )
