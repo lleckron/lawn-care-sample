@@ -1,3 +1,5 @@
+import mower from './assets/mower-logo.png'
+
 export function ServicesObj() {
     const services = [
         {
@@ -8,14 +10,14 @@ export function ServicesObj() {
                     "rateType": "hourly",
                     "rate": "20",
                     "description": "Our expert mowing service, for yards of any size.",
-                    "imageSrc": "",
+                    "imageSrc": mower,
                     "imageAlt": "mowing"
                 }, 
                 {
                     "name": "Landscape Design",
                     "rateType": "hourly",
                     "rate": "30",
-                    "description": "Edging, mulching, sodding, flower bed prep, mulching, and plenty of other options.",
+                    "description": "Edging, mulching, sodding, flower bed prep, and plenty of other options.",
                     "imageSrc": "",
                     "imageAlt": "landscape design"
                 },
