@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import './AboutUs.css'
-import Team from './assets/team.jpg'
+import Team from './assets/team.webp'
 
 export default function AboutUs() {
 

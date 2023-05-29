@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './LawnCareDescription.css'
-import Background from './assets/grass.jpg'
+import Background from './assets/grass.webp'
 import { Link } from 'react-router-dom'
 //import { motion as m, AnimatePresence } from 'framer-motion'
 
