@@ -5,6 +5,9 @@ export function ServicesObj() {
     const services = [
         {
             "type": "Landscaping",
+            "description": "landscaping",
+            "imageSrc": "",
+            "imageAlt": "landscaping",
             "services":[
                 {
                     "name": "Mowing",
@@ -42,6 +45,9 @@ export function ServicesObj() {
         },
         {
             "type": "Tree Removal",
+            "description": "",
+            "imageSrc": "",
+            "imageAlt": "landscaping",
             "services": [
                 {
                     "name": "Tree & Stump Removal",
@@ -63,6 +69,9 @@ export function ServicesObj() {
         },
         {
             "type": "Pest & Lawn Control",
+            "description": "",
+            "imageSrc": "",
+            "imageAlt": "landscaping",
             "services": [
                 {
                     "name": "Pest Spray",
@@ -84,6 +93,9 @@ export function ServicesObj() {
         },
         {
             "type": "Pressure Washing",
+            "description": "",
+            "imageSrc": "",
+            "imageAlt": "landscaping",
             "services": [
                 {
                     "name": "Sidewalk",

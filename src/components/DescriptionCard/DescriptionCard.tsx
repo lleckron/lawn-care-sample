@@ -6,12 +6,13 @@ type DescriptionCardProps = {
     description: string,
     imageSrc: string,
     imageAlt: string,
-    hoverEffect: boolean
+    hoverEffect: boolean,
+    onClick: () => void
 }
 
 
 export default function DescriptionCard( props: DescriptionCardProps ) {
-    const { title, description, imageSrc, imageAlt, hoverEffect } = props
+    const { title, description, imageSrc, imageAlt, hoverEffect, onClick } = props
     const descriptionCardRef = useRef<HTMLDivElement>(null)
     
     useEffect(() => {
@@ -38,13 +39,14 @@ export default function DescriptionCard( props: DescriptionCardProps ) {
 
     return (
         <div className='flex flex-col mt-[30px] md:mr-[20px] md:ml-[20px] bg-white rounded-xl w-[250px] h-[250px] shadow-[0_0_7px_#000000]'
-        ref={descriptionCardRef}>
+        ref={descriptionCardRef}
+        onClick={onClick}>
             <div className='flex justify-center w-full h-[25%] mt-3'>
                 <img src={imageSrc} alt={imageAlt} className='w-20 h-16'/>
             </div>
             <div className='flex flex-col justify-start items-center w-full h-[75%]'>
                 <p className='relative text-center font-bold text-2xl top-0'>{ title }</p>
-                <p className='relative text-center w-90% text-lg'>{ description }</p>
+                <p className='relative text-center w-90% text-lg mt-2'>{ description }</p>
             </div>
         </div>
     )

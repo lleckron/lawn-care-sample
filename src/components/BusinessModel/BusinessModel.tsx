@@ -13,19 +13,22 @@ export default function BusinessModel() {
             description="Fast, thorough service, delivering excellent results while being mindful of your time."
             imageSrc={Efficient}
             imageAlt='efficient'
-            hoverEffect={false}/>
+            hoverEffect={false}
+            onClick={() => {}} />
 
             <DescriptionCard title='Affordable' 
             description="Our commitment is to deliver high-quality lawn care services at prices that won't break the bank."
             imageSrc={Affordable}
             imageAlt='affordable'
-            hoverEffect={false}/>
+            hoverEffect={false}
+            onClick={() => {}}/>
 
             <DescriptionCard title='Reliable' 
             description="Punctuality and professionalism through and through. Expect work that matches your vision."
             imageSrc={Reliable}
             imageAlt='hand clock'
-            hoverEffect={false}/>
+            hoverEffect={false}
+            onClick={() => {}}/>
         </div>
     )
 }

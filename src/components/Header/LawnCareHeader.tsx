@@ -94,7 +94,7 @@ export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderPro
     }
 
     return (
-    	<header className="flex flex-col justify-center items-center min-w-[350px] w-full h-28 bg-forest-green custom-shadow">
+    	<header className="flex flex-col justify-center items-center min-w-[350px] w-full h-28 bg-gradient-to-br from-modern-green-light to-modern-green-dark custom-shadow">
 
             <div className='bg-white w-full min-w-[300px] h-8'>
                 <div className='flex justify-center items-end '>
