@@ -18,7 +18,7 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<Home setSelectedService={setSelectedService}/>} />
 				<Route path="/aboutUs" element={<AboutUs />} />
-				<Route path="/serviceSelection" element={<ServiceSelection selectedService={selectedService}/>} />
+				<Route path="/serviceSelection" element={<ServiceSelection selectedService={selectedService} setSelectedService={setSelectedService}/>} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</React.Fragment>

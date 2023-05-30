@@ -1,5 +1,6 @@
 import Mower from './assets/mower-logo.png'
 import LandscapeDesign from './assets/landscape-design.png'
+import Tree from './assets/tree.png'
 
 export function ServicesObj() {
     const services = [
@@ -30,7 +31,7 @@ export function ServicesObj() {
                     "rateType": "hourly",
                     "rate": "20",
                     "description": "Trimming, pruning, fertilizing, and plenty of other options.",
-                    "imageSrc": "",
+                    "imageSrc": Tree,
                     "imageAlt": "tree"
                 },
                 {
@@ -106,7 +107,7 @@ export function ServicesObj() {
                     "imageAlt": "mowing"
                 },
                 {
-                    "name": "House / Garage Exterior",
+                    "name": "House / Garage",
                     "rateType": "flat",
                     "rate": "100",
                     "description": "Make your house look 20 years younger and a fresh, vibrant look.",

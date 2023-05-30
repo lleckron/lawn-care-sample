@@ -4,11 +4,12 @@ import DescriptionCard from "../DescriptionCard/DescriptionCard"
 import './ServiceSelection.css'
 
 type ServiceSelectionProps = {
-    selectedService: string
+    selectedService: string,
+    setSelectedService: (service: string) => void
 }
 
 export default function ServiceSelection( props: ServiceSelectionProps) {
-    const { selectedService } = props
+    const { selectedService, setSelectedService } = props
     const[serviceSelected, setServiceSelected] = useState(false)
     const [serviceData, setServiceData] = useState(Object)
     const [serviceTypeData, setServiceTypeData] = useState(Object)
@@ -27,6 +28,7 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
     function pageBackToServiceTypes() {
         setServiceTypeData(serviceList)
         setServiceSelected(false)
+        setSelectedService('none')
     }
 
     function pageForwardToServicesFromType(clickedService: string) {
@@ -63,7 +65,7 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
         return (
             <div className="flex flex-col w-full">
                 <div className="flex flex-row justify-center items-center mt-7">
-                    <button className="flex items-center justify-center rounded-2xl h-14 w-40 bg-gradient-to-r from-dark-forest-green from-55% via-modern-green-dark via-80% to-modern-green-light bg-right-bottom hover:bg-left-bottom bg-[length:300%_100%] transition-all duration-500 ease-out" 
+                    <button className="flex items-center justify-center rounded-2xl h-14 w-40 bg-gradient-to-r from-dark-forest-green from-45% via-modern-green-dark via-60% to-modern-green-light bg-right-bottom hover:bg-left-bottom bg-[length:300%_100%] transition-all duration-500 ease-out" 
                     onClick={pageBackToServiceTypes} >
                         <i className="flex mt-[2px] ml-[10px] p-[8px] border-white border-r-[2px] border-b-[2px] rotate-[135deg]"></i>
                         <p className="text-center ml-[10px] pr-[20px] text-2xl text-white return-text-shadow">Return</p>

@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom'
 //import { motion as m, AnimatePresence } from 'framer-motion'
 
 type LawnCareDescriptionProps = {
-	handleOnScheduleServiceButtonClick: (service: string) => void
+	handleScheduleServiceClick: (service: string) => void
 }
 
-export default function LawnCareDescription({ handleOnScheduleServiceButtonClick }: LawnCareDescriptionProps) {
+export default function LawnCareDescription({ handleScheduleServiceClick }: LawnCareDescriptionProps) {
 
     useEffect(() => {
         new Image().src = Background
     }, [])
 
     const onScheduleServiceButtonClick = (service: string) => {
-        handleOnScheduleServiceButtonClick(service)
+        handleScheduleServiceClick(service)
     }
 
     return (
