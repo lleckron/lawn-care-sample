@@ -14,7 +14,7 @@ describe('<LawnCareHeader />', () => {
 		)
 	  
 		return {
-		  ...utils,
+		  	...utils,
 		  	lawnCareHeader: screen.getByTestId('lawn-care-header'),
 		  	companyName: screen.getByText('Sample Lawn Care'),
 			companyPhone: screen.getByText('(765)-123-4567'),

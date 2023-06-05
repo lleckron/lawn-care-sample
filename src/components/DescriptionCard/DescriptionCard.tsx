@@ -40,9 +40,10 @@ export default function DescriptionCard( props: DescriptionCardProps ) {
     return (
         <div className='flex flex-col mt-[30px] md:mr-[20px] md:ml-[20px] bg-white rounded-xl w-[250px] h-[250px] shadow-[0_0_7px_#000000]'
         ref={descriptionCardRef}
-        onClick={onClick}>
+        onClick={onClick}
+        data-testid="description-card">
             <div className='flex justify-center w-full h-[25%] mt-3'>
-                <img src={imageSrc} alt={imageAlt} className='w-20 h-16'/>
+                <img src={imageSrc} alt={imageAlt} className='w-20 h-16' data-testid="description-card-image"/>
             </div>
             <div className='flex flex-col justify-start items-center w-full h-[75%]'>
                 <p className='relative text-center font-bold text-2xl top-0'>{ title }</p>
