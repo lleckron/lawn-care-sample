@@ -41,7 +41,8 @@ export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderPro
         const services = ServicesObj()
 
         return (
-            <div id="services-menu" 
+            <div id="services-menu"
+            data-testid="services-menu"
             className='absolute w-[200px] top-[68%]' 
             onMouseOver={() => toggleShowServices(true)} 
             onMouseLeave={() => toggleShowServices(false)}>
