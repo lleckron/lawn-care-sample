@@ -19,7 +19,7 @@ export default function LawnCareDescription({ handleScheduleServiceClick }: Lawn
     }
 
     return (
-        <div className='flex relative w-full mt-7 min-w-[300px]'>
+        <div className='flex relative w-full mt-7 min-w-[300px]' data-testid="description">
             <div className='flex flex-row relative w-full h-[400px] sm:h-[400px] md:h-[500px]'>
                 <img src={Background} alt="lawn-Background" className='w-full bg-cover h-full relative z-10'/>
                 <div className='absolute w-full z-[15] top-[15%]'>

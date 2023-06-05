@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import DescriptionCard from './DescriptionCard';
+import DescriptionCard from '../components/DescriptionCard/DescriptionCard';
 import { MemoryRouter } from 'react-router-dom'
 
 let mockedProps = {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, screen, fireEvent } from '@testing-library/react'
-import LawnCareHeader from './LawnCareHeader'
+import LawnCareHeader from '../components/Header/LawnCareHeader.tsx'
 import { MemoryRouter } from 'react-router-dom'
-import { ServicesObj } from '../../models/services.js'
+import { ServicesObj } from '../models/services.js'
 
 describe('<LawnCareHeader />', () => {
 
