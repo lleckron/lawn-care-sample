@@ -12,9 +12,9 @@ export default function AboutUs() {
         <div className="flex flex-col items-center w-[75%] mt-7 ml-auto mr-auto pb-10"
         data-testid="about-us">
             <div className="flex flex-row relative w-[310px] sm:w-[600px] h-[225px] sm:h-[300px]">
-                <img src={Team} alt="team" className="w-full bg-cover h-full relative z-10" />
+                <img src={Team} alt="team" className="w-full bg-cover h-full relative z-10" data-testid="about-us-image"/>
             </div>
-            <div className="flex flex-col relative w-full mt-10">
+            <article className="flex flex-col relative w-full mt-10" data-testid="about-us-article">
                 <p className="text-sm sm:text-lg ">
                     <span className="ml-10"></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -35,7 +35,7 @@ export default function AboutUs() {
 
                 <div className="absolute h-full left-[-15px] border-l-4 border-l-forest-green"></div>
                 <div className="absolute h-full right-[-15px] border-r-4 border-r-forest-green"></div>
-            </div>
+            </article>
         </div>
     )
 }
