@@ -1,7 +1,7 @@
 import './App.css'
 import React, { useState } from 'react'
 import LawnCareHeader from './components/Header/LawnCareHeader.tsx'
-import Home from './components/Home/Home'
+import Home from './components/Home/Home.tsx'
 import AboutUs from './components/AboutUs/AboutUs.tsx'
 import NotFound from './components/NotFound/NotFound.tsx'
 import ServiceSelection from './components/ServiceSelection/ServiceSelection.tsx'
