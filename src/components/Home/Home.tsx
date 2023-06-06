@@ -14,7 +14,7 @@ export default function Home({ setSelectedService }: HomePageProps ) {
 
     return (
 
-		<React.Fragment>
+		<React.Fragment data-testid="home">
 			<link href="/dist/output.css" rel="stylesheet"></link>
 
 			<LawnCareDescription handleScheduleServiceClick={handleServiceSelectionClick}/>
