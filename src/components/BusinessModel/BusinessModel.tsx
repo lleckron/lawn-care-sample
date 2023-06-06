@@ -8,7 +8,7 @@ import Reliable from './assets/reliable.png'
 export default function BusinessModel() {
 
     return (
-        <div className='flex flex-col md:flex-row justify-center items-center relative w-full mt-20 pb-20'>
+        <div className='flex flex-col md:flex-row justify-center items-center relative w-full mt-20 pb-20' data-testid="business-model">
             <DescriptionCard title='Efficient' 
             description="Fast, thorough service, delivering excellent results while being mindful of your time."
             imageSrc={Efficient}
