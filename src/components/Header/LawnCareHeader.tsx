@@ -7,10 +7,10 @@ import { motion as m, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
 type LawnCareHeaderProps = {
-	setSelectedService: (service: string) => void
+	setSelectedServiceType: (service: string) => void
 }
 
-export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderProps) {
+export default function LawnCareHeader({ setSelectedServiceType }: LawnCareHeaderProps) {
 
     const[showServices, setShowServices] = useState(false)
     const[hamburgerMenuExpand, setHamburgerMenuExpand] = useState(false)
@@ -24,7 +24,7 @@ export default function LawnCareHeader({ setSelectedService }: LawnCareHeaderPro
     }
 
     const onServiceClick = (service: string) => {
-        setSelectedService(service)
+        setSelectedServiceType(service)
         toggleShowServices(false)
     }
 

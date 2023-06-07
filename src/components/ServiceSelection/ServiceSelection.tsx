@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useMemo } from "react"
 import { ServicesObj } from '../../models/services.js'
 import DescriptionCard from "../DescriptionCard/DescriptionCard"
+import { Link } from 'react-router-dom'
 import './ServiceSelection.css'
 
 type ServiceSelectionProps = {
-    selectedService: string,
+    selectedServiceType: string,
+    setSelectedServiceType: (serviceType: string) => void,
     setSelectedService: (service: string) => void
 }
 
 export default function ServiceSelection( props: ServiceSelectionProps) {
-    const { selectedService, setSelectedService } = props
+    const { selectedServiceType, setSelectedServiceType, setSelectedService } = props
     const[serviceSelected, setServiceSelected] = useState(false)
     const [serviceData, setServiceData] = useState(Object)
     const [serviceTypeData, setServiceTypeData] = useState(Object)
@@ -18,27 +20,32 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
     const serviceList = useMemo(() => services, [services])
 
     useEffect(() => {
-        if(selectedService !== 'none') {
-            pageForwardToServicesFromType(selectedService)
+        if(selectedServiceType !== 'none') {
+            pageForwardToServicesFromType(selectedServiceType)
         } else {
             pageBackToServiceTypes()
         }
-    }, [selectedService])
+    }, [selectedServiceType]) // eslint-disable-line react-hooks/exhaustive-deps
 
     function pageBackToServiceTypes() {
         setServiceTypeData(serviceList)
         setServiceSelected(false)
-        setSelectedService('none')
+        setSelectedServiceType('none')
     }
 
-    function pageForwardToServicesFromType(clickedService: string) {
+    function pageForwardToServicesFromType(clickedServiceType: string) {
         for(const service of serviceList) {
-            if(service.type === clickedService) {
+            if(service.type === clickedServiceType) {
                 setServiceData(service.services)
+                setSelectedServiceType(service.type)
             }
         }
         
         setServiceSelected(true)
+    }
+
+    function serviceFromTypeClick(clickedService: string) {
+        setSelectedService(clickedService)
     }
 
     function ShowAvailableServiceTypes() {
@@ -71,7 +78,7 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
                         <p className="text-center ml-[10px] pr-[20px] text-2xl text-white return-text-shadow">Return</p>
                     </button>
                 </div>
-                <div className='flex flex-col md:flex-row justify-center items-center flex-wrap relative mt-10'>
+                <Link to="/scheduleService" className='flex flex-col md:flex-row justify-center items-center flex-wrap relative mt-10'>
                     {serviceData.map((data: { name: string, description: string, imageSrc: string, imageAlt: string}, index: React.Key ) => (
                         <DescriptionCard title={data.name} 
                         description={data.description} 
@@ -79,9 +86,9 @@ export default function ServiceSelection( props: ServiceSelectionProps) {
                         imageAlt={data.imageAlt} 
                         hoverEffect={true}
                         key={index}
-                        onClick={() => {}}/>
+                        onClick={() => serviceFromTypeClick(data.name)}/>
                     ))}
-                </div>
+                </Link>
             </div>
         )
     }

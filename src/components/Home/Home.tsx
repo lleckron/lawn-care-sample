@@ -3,18 +3,18 @@ import LawnCareDescription from '../Description/LawnCareDescription.tsx'
 import BusinessModel from '../BusinessModel/BusinessModel.tsx'
 
 type HomePageProps = {
-	setSelectedService: (service: string) => void
+	setSelectedServiceType: (service: string) => void
 }
 
-export default function Home({ setSelectedService }: HomePageProps ) {
+export default function Home({ setSelectedServiceType }: HomePageProps ) {
 
 	const handleServiceSelectionClick = (service: string) => {
-		setSelectedService(service)
+		setSelectedServiceType(service)
 	}
 
     return (
 
-		<React.Fragment data-testid="home">
+		<React.Fragment>
 			<link href="/dist/output.css" rel="stylesheet"></link>
 
 			<LawnCareDescription handleScheduleServiceClick={handleServiceSelectionClick}/>
