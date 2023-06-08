@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import './ScheduleService.css'
@@ -9,18 +9,19 @@ type ScheduleServiceProps = {
 
 export default function ScheduleService(props: ScheduleServiceProps) {
     const { service } = props
-    const date = new Date()
+    const currentDate = new Date()
+    const [scheduleDate, setScheduleDate] = useState(new Date(getMinYear(), getMinMonth(), (getMinDay() + 1)))
 
     function getMinDay() {
-        return date.getDate()
+        return currentDate.getDate()
     }
 
     function getMinMonth() {
-        return date.getMonth()
+        return currentDate.getMonth()
     }
 
     function getMinYear() {
-        return date.getFullYear()
+        return currentDate.getFullYear()
     }
 
     function findMaxDate() {
@@ -62,13 +63,12 @@ export default function ScheduleService(props: ScheduleServiceProps) {
 
         return (
             <Calendar view='month'
-            minDate={minDate}
+            minDate={ minDate }
             minDetail='month'
-            defaultActiveStartDate={minDate} 
-            defaultValue={minDate}
-            maxDetail='month'
-            maxDate={maxDate} 
-            />
+            maxDate={ maxDate }
+            defaultValue={ minDate }
+            onClickDay={ (newDate) => setScheduleDate(newDate) }
+            value={ scheduleDate }/>
         )
     }
 
@@ -76,6 +76,7 @@ export default function ScheduleService(props: ScheduleServiceProps) {
         <div className='flex flex-col justify-center items-center mt-10'>
             <Schedule />
             <p className='mt-5'>{service}</p>
+            <p className='mt-5'>{scheduleDate.toString()}</p>
         </div>
     )
 }
