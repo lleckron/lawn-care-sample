@@ -1,6 +1,7 @@
 import React from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import './ScheduleService.css'
 
 type ScheduleServiceProps = {
     service: string
@@ -9,7 +10,6 @@ type ScheduleServiceProps = {
 export default function ScheduleService(props: ScheduleServiceProps) {
     const { service } = props
     const date = new Date()
-    console.log(date)
 
     function getMinDay() {
         return date.getDate()
@@ -59,15 +59,16 @@ export default function ScheduleService(props: ScheduleServiceProps) {
 
         const minDate = new Date(currentYear, currentMonth, (currentDay + 1))
         const maxDate = findMaxDate()
-        console.log('min date: ' + minDate)
-        console.log('max date: ' + maxDate)
 
         return (
             <Calendar view='month'
             minDate={minDate}
+            minDetail='month'
             defaultActiveStartDate={minDate} 
             defaultValue={minDate}
-            maxDate={maxDate} />
+            maxDetail='month'
+            maxDate={maxDate} 
+            />
         )
     }
 
