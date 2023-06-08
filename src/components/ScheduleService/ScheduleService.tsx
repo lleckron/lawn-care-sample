@@ -10,10 +10,10 @@ type ScheduleServiceProps = {
 export default function ScheduleService(props: ScheduleServiceProps) {
     const { service } = props
     const currentDate = new Date()
-    const [scheduleDate, setScheduleDate] = useState(new Date(getMinYear(), getMinMonth(), (getMinDay() + 1)))
+    const [scheduleDate, setScheduleDate] = useState(new Date(getMinYear(), getMinMonth(), getMinDay()))
 
     function getMinDay() {
-        return currentDate.getDate()
+        return currentDate.getDate() + 1
     }
 
     function getMinMonth() {
@@ -54,11 +54,11 @@ export default function ScheduleService(props: ScheduleServiceProps) {
     }
 
     function Schedule() {
-        const currentDay = getMinDay()
-        const currentMonth = getMinMonth()
-        const currentYear = getMinYear()
+        const minDay = getMinDay()
+        const minMonth = getMinMonth()
+        const minYear = getMinYear()
 
-        const minDate = new Date(currentYear, currentMonth, (currentDay + 1))
+        const minDate = new Date(minYear, minMonth, minDay )
         const maxDate = findMaxDate()
 
         return (
