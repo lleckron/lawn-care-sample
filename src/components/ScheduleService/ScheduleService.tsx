@@ -96,7 +96,7 @@ export default function ScheduleService(props: ScheduleServiceProps) {
     }, [])
 
     const checkPhoneIsValid = useCallback((phone: string) => {
-        const phoneRegex = /^(\(\d{3}\)|\d{3})-\d{3}-\d{4}$/
+        const phoneRegex = /^(\(\d{3}\)|\d{3})(-)?\d{3}(-)?\d{4}$/
         if(phoneRegex.test(phone)) {
             setFormState(prevState => ({
                 ...prevState,
