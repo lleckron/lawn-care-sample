@@ -141,7 +141,7 @@ export default function ScheduleService(props: ScheduleServiceProps) {
             maxDay = 1
         }
 
-        if((minMonth + 1) < 12) {
+        if((minMonth + 1) < 11) {
             maxMonth = minMonth + 1
             maxYear = minYear
         } else {
