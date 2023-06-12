@@ -24,6 +24,7 @@ module.exports = {
       'blue': '#0000FF',
       'light-gray': '#C0C0C0',
       'medium-gray': '#B0B0B0',
+      'modal-bg-gray': 'rgba(0, 0, 0, 0.3)',
       'white': '#FFFFFF'
     },
     extend: {

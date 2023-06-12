@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import ScheduleServiceModal from '../ScheduleServiceModal/ScheduleServiceModal'
 import './ScheduleService.css'
 
 type ScheduleServiceProps = {
@@ -13,7 +14,9 @@ export default function ScheduleService(props: ScheduleServiceProps) {
     const maxTextInput = 32
     const maxEmailInput = 50
     const [scheduleDate, setScheduleDate] = useState(new Date(getMinYear(), getMinMonth(), getMinDay()))
+    const [scheduleTime, setScheduleTime] = useState('08:00:00')
     const [buttonDisabled, setButtonDisabled] = useState(true)
+    const [showModal, setShowModal] = useState(false)
     const [formState, setFormState] = useState({
         firstName: '',
         lastName: '',
@@ -172,6 +175,26 @@ export default function ScheduleService(props: ScheduleServiceProps) {
         )
     }
 
+    function HourSelect() {
+
+        return (
+            <select className='flex flex-col justify-center items-center w-3/4 h-10 mb-8 text-justify text-xl pl-[100px] pt-1 font-bold shadow-md'
+            onChange={(event) => setScheduleTime(event.target.value)}
+            value={scheduleTime}>
+                <option value='08:00:00'>8:00 am</option>
+                <option value='09:00:00'>9:00 am</option>
+                <option value='10:00:00'>10:00 am</option>
+                <option value='11:00:00'>11:00 am</option>
+                <option value='12:00:00'>12:00 pm</option>
+                <option value='13:00:00'>1:00 pm</option>
+                <option value='14:00:00'>2:00 pm</option>
+                <option value='15:00:00'>3:00 pm</option>
+                <option value='16:00:00'>4:00 pm</option>
+                <option value='17:00:00'>5:00 pm</option>
+            </select>
+        )
+    }
+
     return (
         <div className='flex flex-col justify-center items-center mt-10'>
             <div className='flex flex-col justify-center items-center w-3/4 mb-10'>
@@ -218,15 +241,24 @@ export default function ScheduleService(props: ScheduleServiceProps) {
                 </div>
             </div>
 
+            <HourSelect />
+
             <Schedule />
-            <p>{ service }</p>
-            <div className='flex justify-center items-center w-full'>
-            <button className="flex items-center justify-center rounded-2xl h-14 w-40 mt-5 mb-10 disabled:bg-medium-gray disabled:opacity-50 disabled:cursor-pointer enabled:bg-gradient-to-r enabled:from-dark-forest-green enabled:from-45% enabled:via-modern-green-dark enabled:via-60% enabled:to-modern-green-light enabled:bg-right-bottom hover:bg-left-bottom bg-[length:300%_100%] transition-all duration-500 ease-out" 
-                    disabled={buttonDisabled}
-                    onClick={() => {console.log('click')}} >
-                        <p className="text-center text-2xl text-white return-text-shadow">Submit</p>
-                    </button>
+            
+            <div className='flex justify-center items-center w-full mt-8'>
+                <button className="flex items-center justify-center rounded-2xl h-14 w-40 mt-5 mb-10 disabled:bg-medium-gray disabled:opacity-50 disabled:cursor-pointer enabled:bg-gradient-to-r enabled:from-dark-forest-green enabled:from-45% enabled:via-modern-green-dark enabled:via-60% enabled:to-modern-green-light enabled:bg-right-bottom hover:bg-left-bottom bg-[length:300%_100%] transition-all duration-500 ease-out" 
+                disabled={buttonDisabled}
+                onClick={() => setShowModal(true)} >
+                    <p className="text-center text-2xl text-white return-text-shadow">Submit</p>
+                </button>
             </div>
+
+        {showModal && <ScheduleServiceModal service={service}
+        scheduleDate={scheduleDate}
+        scheduleTime={scheduleTime}
+        back={() => setShowModal(false)}
+        confirm={() => {console.log('confirmed')}}/>}
+
         </div>
     )
 }
