@@ -178,7 +178,7 @@ export default function ScheduleService(props: ScheduleServiceProps) {
     function HourSelect() {
 
         return (
-            <select className='flex flex-col justify-center items-center w-3/4 h-10 mb-8 text-justify text-xl pl-[100px] pt-1 font-bold shadow-md'
+            <select className='flex flex-col justify-center items-center w-full h-10 mb-8 text-justify text-xl pl-[100px] pt-1 font-bold shadow-md'
             onChange={(event) => setScheduleTime(event.target.value)}
             value={scheduleTime}>
                 <option value='08:00:00'>8:00 am</option>
@@ -198,50 +198,53 @@ export default function ScheduleService(props: ScheduleServiceProps) {
     return (
         <div className='flex flex-col justify-center items-center mt-10'>
             <div className='flex flex-col justify-center items-center w-3/4 mb-10'>
-                <div className='flex flex-col justify-between relative w-full sm:flex-row sm:justify-around'>
-
-                    {formState.firstNameError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[34px]'>!</div>}
-                    <label htmlFor='first-name' className='mt-2'>First Name:</label>
-                    <input type='text' 
-                    id='first-name' 
-                    placeholder='John' 
-                    maxLength={maxTextInput} 
-                    className='flex w-full h-10 text-lg pl-2 rounded-md shadow-md'
+                <div className="flex flex-col justify-between relative w-[300px] md:w-[500px]">
+                    
+                    {formState.firstNameError && (<div className="flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[30px]">!</div>)}
+                    <label htmlFor="first-name" className="mt-2 min-w-[85px]">
+                        First Name:
+                    </label>
+                    <input type="text"
+                    id="first-name"
+                    placeholder="John"
+                    maxLength={maxTextInput}
+                    className="flex w-full h-10 min-w-[250px] text-lg pl-2 rounded-md shadow-md md:mr-10"
                     onChange={(event) => checkFirstNameIsValid(event.target.value)}/>
 
-                    {formState.lastNameError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[105px]'>!</div>}
-                    <label htmlFor='last-name' className='mt-2'>Last Name:</label>
-                    <input type='text' 
-                    id='last-name' 
-                    placeholder='Doe' 
+                    {formState.lastNameError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[103px]'>!</div>}
+                    <label htmlFor="last-name" className="mt-2 min-w-[85px]">
+                        Last Name:
+                    </label>
+                    <input type="text"
+                    id="last-name"
+                    placeholder="Doe"
                     maxLength={maxTextInput}
-                    className='flex w-full h-10 text-lg pl-2 rounded-md shadow-md'
+                    className="flex w-full h-10 min-w-[250px] text-lg pl-2 rounded-md shadow-md"
                     onChange={(event) => checkLastNameIsValid(event.target.value)}/>
-                </div>
 
-                <div className='flex flex-col justify-between relative w-full sm:flex-row sm:justify-center'>
-
-                    {formState.emailError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[34px]'>!</div>}
-                    <label htmlFor='email' className='mt-2'>Email:</label>
+                    {formState.emailError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[175px]'>!</div>}
+                    <label htmlFor='email' className='mt-2 min-w-[85px]'>Email:</label>
                     <input type='email' 
                     id='email' 
                     placeholder='example@gmail.com'
                     maxLength={maxEmailInput}
-                    className='flex w-full h-10 text-lg pl-2 rounded-md shadow-md'
+                    className='flex w-full h-10 min-w-[250px] text-lg pl-2 rounded-md shadow-md md:mr-10'
                     onChange={(event) => checkEmailIsValid(event.target.value)}/>
 
-                    {formState.phoneError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[105px]'>!</div>}
-                    <label htmlFor='phone' className='mt-2'>Phone:</label>
+                    {formState.phoneError && <div className='flex absolute text-invalid-red font-bold text-3xl right-[105%] top-[247px]'>!</div>}
+                    <label htmlFor='phone' className='mt-2 min-w-[85px]'>Phone:</label>
                     <input type='tel' 
                     id='phone' 
                     placeholder='765-321-7654' 
                     maxLength={maxTextInput}
-                    className='flex w-full h-10 text-lg pl-2 rounded-md shadow-md'
+                    className='flex w-full h-10 min-w-[250px] text-lg pl-2 rounded-md shadow-md'
                     onChange={(event) => checkPhoneIsValid(event.target.value)}/>
                 </div>
             </div>
 
-            <HourSelect />
+            <div className='flex justify-center items-center w-[300px]'>
+                <HourSelect />
+            </div>
 
             <Schedule />
             
