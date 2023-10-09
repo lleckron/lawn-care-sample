@@ -6,10 +6,13 @@ import './ScheduleService.css'
 
 type ScheduleServiceProps = {
     service: string
+    setAppointmentConfirmed: (arg: boolean) => void,
+    setAppointmentTime: (str: String) => void,
+    setAppointmentDate: (date: Date) => void
 }
 
 export default function ScheduleService(props: ScheduleServiceProps) {
-    const { service } = props
+    const { service, setAppointmentConfirmed, setAppointmentTime, setAppointmentDate } = props
     const currentDate = new Date()
     const maxTextInput = 32
     const maxEmailInput = 50
@@ -156,6 +159,12 @@ export default function ScheduleService(props: ScheduleServiceProps) {
 
     }
 
+    function confirmAppointment() {
+        setAppointmentConfirmed(true)
+        setAppointmentTime(scheduleTime)
+        setAppointmentDate(scheduleDate)
+    }
+
     function Schedule() {
         const minDay = getMinDay()
         const minMonth = getMinMonth()
@@ -260,7 +269,7 @@ export default function ScheduleService(props: ScheduleServiceProps) {
         scheduleDate={scheduleDate}
         scheduleTime={scheduleTime}
         back={() => setShowModal(false)}
-        confirm={() => {console.log('confirmed')}}/>}
+        confirm={() => confirmAppointment()}/>}
 
         </div>
     )

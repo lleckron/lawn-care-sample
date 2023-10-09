@@ -7,7 +7,7 @@ export function ServicesObj() {
         {
             "type": "Landscaping",
             "description": "landscaping",
-            "imageSrc": "",
+            "imageSrc": Mower,
             "imageAlt": "landscaping",
             "services":[
                 {
@@ -39,7 +39,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "100",
                     "description": "Let us handle your post-construction, fall, or spring clean-ups.",
-                    "imageSrc": "",
+                    "imageSrc": Mower,
                     "imageAlt": "cleanup"
                 }
             ]
@@ -47,7 +47,7 @@ export function ServicesObj() {
         {
             "type": "Tree Removal",
             "description": "",
-            "imageSrc": "",
+            "imageSrc": Tree,
             "imageAlt": "landscaping",
             "services": [
                 {
@@ -55,7 +55,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "200",
                     "description": "Say goodbye to that dead or hazardous tree.",
-                    "imageSrc": "",
+                    "imageSrc": Tree,
                     "imageAlt": "tree"
                 },
                 {
@@ -63,7 +63,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "200",
                     "description": "Get rid of that pesky stump that's overstayed its welcome.",
-                    "imageSrc": "",
+                    "imageSrc": Tree,
                     "imageAlt": "Stump"
                 }
             ]
@@ -71,7 +71,7 @@ export function ServicesObj() {
         {
             "type": "Pest & Lawn Control",
             "description": "",
-            "imageSrc": "",
+            "imageSrc": LandscapeDesign,
             "imageAlt": "landscaping",
             "services": [
                 {
@@ -79,7 +79,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "150",
                     "description": "Eliminate pests, protect your lawn and garden with our professional pest spray services.",
-                    "imageSrc": "",
+                    "imageSrc": LandscapeDesign,
                     "imageAlt": "mowing"
                 },
                 {
@@ -87,7 +87,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "150",
                     "description": "Give your lawn and garden a healthy head start with our quality fertilizers.",
-                    "imageSrc": "",
+                    "imageSrc": LandscapeDesign,
                     "imageAlt": "mowing"
                 }
             ]
@@ -95,7 +95,7 @@ export function ServicesObj() {
         {
             "type": "Pressure Washing",
             "description": "",
-            "imageSrc": "",
+            "imageSrc": LandscapeDesign,
             "imageAlt": "landscaping",
             "services": [
                 {
@@ -103,7 +103,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "100",
                     "description": "Give your sidewalks new life with a thorough cleaning.",
-                    "imageSrc": "",
+                    "imageSrc": LandscapeDesign,
                     "imageAlt": "mowing"
                 },
                 {
@@ -111,7 +111,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "100",
                     "description": "Make your house look 20 years younger and a fresh, vibrant look.",
-                    "imageSrc": "",
+                    "imageSrc": LandscapeDesign,
                     "imageAlt": "mowing"
                 },
                 {
@@ -119,7 +119,7 @@ export function ServicesObj() {
                     "rateType": "flat",
                     "rate": "100",
                     "description": "Revamp your outside space with a fresh wash.",
-                    "imageSrc": "",
+                    "imageSrc": LandscapeDesign,
                     "imageAlt": "mowing"
                 }
             ]

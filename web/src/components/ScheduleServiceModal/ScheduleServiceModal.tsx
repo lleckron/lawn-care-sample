@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 type ScheduleServiceModalProps = {
     service: String,
@@ -44,10 +44,12 @@ export default function ScheduleServiceModal(props: ScheduleServiceModalProps) {
                     onClick={() => back()}>
                         Back
                     </button>
-                    <button className='bg-forest-green h-4/5 w-24 md:w-36 rounded-md text-white md:text-xl font-bold'
-                    onClick={() => confirm()}>
-                        Confirm
-                    </button>
+                    <Link to="/" className='h-4/5 w-24 md:w-36 '>
+                        <button className='bg-forest-green w-full h-full rounded-md text-white md:text-xl font-bold'
+                            onClick={() => confirm()}>
+                            Confirm
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
